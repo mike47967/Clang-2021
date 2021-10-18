@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("The volume is: %d\nAlso look at the box blueprint:\n", a * b * c);
+    
+    printf("Front view:\n ");                    // first box projection
+    for (int i = 0; i < a; i++){
+        printf("- ");
+    }
+    printf("\n");
+    for (int i = 0; i < b; i++){
+        printf("|");
+        for (int i = 0; i < a * 2 - 1; i++){
+            printf(" ");
+        }
+        printf("|\n");
+    }
+    printf(" ");
+    for (int i = 0; i < a; i++){
+        printf("- ");
+    }
+    printf("\n");
+    
+    
+    printf("Side view:\n ");                      // second box projection
+    for (int i = 0; i < c; i++){
+        printf("- ");
+    }
+    printf("\n");
+    for (int i = 0; i < b; i++){
+        printf("|");
+        for (int i = 0; i < c * 2 - 1; i++){
+            printf(" ");
+        }
+        printf("|\n");
+    }
+    printf(" ");
+    for (int i = 0; i < c; i++){
+        printf("- ");
+    }
+    printf("\n");
+    
+    
+    printf("Top view:\n ");                      // third box projection
+    for (int i = 0; i < c; i++){
+        printf("- ");
+    }
+    printf("\n");
+    for (int i = 0; i < a; i++){
+        printf("|");
+        for (int i = 0; i < c * 2 - 1; i++){
+            printf(" ");
+        }
+        printf("|\n");
+    }
+    printf(" ");
+    for (int i = 0; i < c; i++){
+        printf("- ");
+    }
+    printf("\n");
+
+    return 0;
+}
