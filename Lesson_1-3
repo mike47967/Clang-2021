@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+int main()
+{
+    int a = sizeof("hello darkness my old friend");
+    printf("The length of the given string is %d, and it is 100%% low register, no upper register letters.", a);
+}
