@@ -5,6 +5,5 @@ int main()
     unsigned long long a, x = 10401309014; // буквенный пароль, зашифрованный шифром A1Z26 и разделённый нулями
     printf("Welcome to our super secret database access point!\nPlease, enter password:   ");
     scanf("%llu", &a);
-    if (a == x) printf("\nAccess granted!");
-    else printf("\nAccess denied!");
+    printf("%s", a == x ? "Access granted" : "Access denied");
 }
