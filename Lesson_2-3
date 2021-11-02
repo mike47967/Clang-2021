@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int a = 6, b;
+    printf("Введите длину лестницы и пирамиды (по умолчанию 6):   ");
+    scanf("%d", &b);
+    if (b > 0) a = b;
+    printf("\nВаша лестница:\n\n");
+    for(int i = 0; i < a; i++)
+    {
+        printf("   ");
+        for(int j = 0; j <= i; j++) printf("*");
+        printf("\n");
+    }
+    printf("\nВаша пирамида:\n\n");
+    for(int i = 0; i < a; i++)
+    {
+        for(int j = 0; j <= a - i - 1; j++) printf(" ");
+        for(int j = 0; j <= i * 2; j++) printf("*");
+        printf("\n");
+    }
+}
