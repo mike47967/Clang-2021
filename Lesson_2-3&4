@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+ 
+int main() 
+{
+    double a, b, c, D, x1, x2, x1i, x2i, eps=1e-9;
+    scanf("%lf %lf %lf", &a, &b, &c);
+    
+    printf("Analysing:\n%lfx² + %lfx + %lf = 0\n", a, b, c);
+    
+    D = b * b - 4. * a * c;
+    
+    if (D > eps) 
+    {
+        D = sqrt(D);
+        x1 = (-b + D) / (2. * a);
+        x2 = (-b - D) / (2. * a);
+        if(fabs(x1) < eps) x1 = 0.;
+        if(fabs(x2) < eps) x2 = 0.;
+        printf("x1 = %lf, x2 = %lf", x1, x2);
+    }  
+    else if (fabs(D) < eps)
+    {
+        x1 = -b / (2. * a);
+        if(fabs(x1) < eps) x1 = 0.;
+        printf("x = %lf", x1);
+    }
+    else if (D < -eps)
+    {
+        x1 = -b / (2 * a);
+        x1i = sqrt(-D) / (2 * a);
+        x2 = -b / (2 * a);
+        x2i = -sqrt(-D) / (2 * a);
+        printf("x1 = %lf + %lfi, x2 = %lf + %lfi", x1, x1i, x2, x2i);
+    }
+}
