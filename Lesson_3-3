@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[16], b = 0;
+    for (int i = 0; i < 16; i++)
+    {
+        printf("Enter an integer that is between 0 and 15.\n");
+        scanf("%d", &b);
+        if (b >= 0 && b < 16) a[i] = b;
+        else
+        {
+            printf("That number is incorrect. Value was set to 0.\n");
+            a[i] = 0;
+        }
+    }
+    
+    for (int i = 0; i < 16; i++) 
+    {
+        for (int j = 0; j < a[i]; j++) printf("*");
+        printf("\n");
+    }
+}
