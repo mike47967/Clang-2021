@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int a;
+    printf("Введите число апельсинов:   ");
+    scanf("%d", &a);
+
+    printf("Вы ввели:   ");
+    if (a % 10 == 1 && a % 100 / 10 != 1) printf("%d апельсин", a);
+    else if (a % 10 > 1 && a % 10 < 5 && a % 100 / 10 != 1) printf("%d апельсина", a);
+        else printf("%d апельсинов", a);
+
+}
