@@ -2,7 +2,7 @@
 
 int main()
 {
-    int a[16], b = 0;
+    int a[15], b = 0;
     for (int i = 0; i < 16; i++)
     {
         printf("Enter an integer that is between 0 and 15.\n");
