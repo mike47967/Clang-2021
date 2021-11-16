@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
+
+int main()
+{
+    char * a, * b;
+    a = (char*) calloc(1, sizeof(char));
+    b = (char*) calloc(1, sizeof(char));
+    int len1 = 1, len2 = 1, similar = 0;
+    char c = '0';
+    
+    printf("Enter the first string:\n");
+    
+    while ((c = getchar()) != '\n')
+    {
+        a[len1 - 1] = c;
+        len1++;
+        a = (char*) realloc(a, len1);
+    }
+    
+    printf("Enter the second string:\n");
+    
+    while ((c = getchar()) != '\n')
+    {
+        b[len2 - 1] = c;
+        len2++;
+        b = (char*) realloc(b, len2);
+    }
+    
+    a[len2 - 1] = '\0';
+    b[len2 - 1] = '\0';
+
+    for (int i = 0; i < MIN(len1, len2); i++) if (a[i] == b[i]) similar++; else break;
+    
+    if (similar == len1 && similar == len2) printf("The strings are equal!");
+    else if (similar != 0) printf("The strings are partly equal, the equality spreads on %d chars.", similar);
+    else printf("The strings are not equal!");
+
+    return 0;
+}
