@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(
+{
+    char * a;
+    a = (char*) calloc(1, sizeof(char));
+    char b = '0';
+    int length = 1;
+    
+    printf("Enter the string:\n");
+    
+    while ((b = getchar()) != '\n')
+    {
+        a[length - 1] = b;
+        length++;
+        a = (char*) realloc(a, length);
+    }
+    
+    a[length - 1] = '\0';
+
+    printf("The length is: %d", length - 1);
+
+    return 0;
+}
