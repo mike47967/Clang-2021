@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int checklen(char * n)
+{
+    for (int i = 1; i <= 127; i++) if (n[i] == '\0') return i - 1;
+    return 127;
+}
+
+int main()
+{
+    char * n;
+    n = (char*) malloc(128 * sizeof(char));
+    char c;
+    
+    for (int i = 1; i <= 127; i++) if (c = getchar() != '\n') {n[i] = c;} else {n[i] = '\0'; break;} 
+    
+    printf("%d", checklen(n));
+}
